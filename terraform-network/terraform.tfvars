@@ -1,0 +1,7 @@
+tenancy_ocid = "ocid1.tenancy.oc1..xxx"
+user_ocid = "ocid1.user.oc1..xxx"
+compartment_ocid = "ocid1.compartment.oc1..xxx"
+fingerprint = "90:91:...:01:24"
+region = "eu-frankfurt-1"
+private_key_path = "/../../ssh-keys/oci_api_key.pem"
+ssh_public_key = "ssh-rsa AAAAB3Nza...FepV oci_instance"

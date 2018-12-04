@@ -1,0 +1,29 @@
+{
+  "builders": [
+    {
+      "availability_domain": "{{user `availability_domain`}}",
+      "region": "{{user `region`}}",
+      "tenancy_ocid": "{{user `tenancy_ocid`}}",
+      "compartment_ocid": "{{user `compartment_ocid`}}",
+      "user_ocid": "{{user `user_ocid`}}",
+
+      "subnet_ocid": "ocid1.subnet.oc1.eu-frankfurt-1.xxx",
+
+      "base_image_ocid": "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaaitzn6tdyjer7jl34h2ujz74jwy5nkbukbh55ekp6oyzwrtfa4zma",
+
+      "image_name": "grafana534_ansible_ol7",
+      "shape": "VM.Standard2.1",
+      "ssh_username": "opc",
+      "type": "oracle-oci",
+      "fingerprint": "{{user `fingerprint`}}",
+      "key_file": "{{user `key_file`}}"
+
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "ansible",
+      "playbook_file": "{{ template_dir }}/grafana.yml"
+    }
+  ]
+}

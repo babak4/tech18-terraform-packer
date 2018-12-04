@@ -1,0 +1,21 @@
+- name: Installing Grafana 5.3.4 on latest OL7.5
+  hosts: all
+  tasks:
+   - name: yum update
+     yum:
+      name: "*"
+      state: latest
+     become: yes
+
+   - name: install grafana
+     yum:
+       name: https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-5.3.4-1.x86_64.rpm
+       state: present
+     become: yes
+
+   - name: stop and disable firewalld
+     service: 
+      name: firewalld 
+      state: stopped 
+      enabled: no
+     become: yes
